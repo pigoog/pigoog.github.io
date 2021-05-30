@@ -1,0 +1,71 @@
+ body {
+	font: normal 14px Tahoma, Simsun;
+	vertical-align: baseline;
+	background: #fff;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Chrome/Safari/Opera */
+	-khtml-user-select: none; /* Konqueror */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently not supported by any browser */
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	width: 100%;
+	height: 105%;/*修改高度！！！*/
+	margin: 0px;
+	padding: 0px;
+} 
+
+ a { color:#0d63e3; } 
+
+ a:hover { color:#f54; } 
+
+ .header, .links, .footer {
+	width: 700px;
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+}
+ .search { width:700px; margin:15px auto; padding:8px 4px; text-align:center; }
+
+ .search form { width:485px; margin:0 auto; }
+
+ .i {
+	font-size: 16px;
+	font-family: Tahoma;
+	width: 360px;
+	height: auto;
+	line-height: 24px;
+	margin-right: 2px;
+	background: #fff;
+	border: 1px solid #C9C9C9;
+	display: inline-block;
+	padding-top: 3px;
+	padding-right: 6px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+} 
+
+ .btn_wr { width:97px; height:34px; vertical-align:top; _padding-top:1px; display:inline-block; }
+
+ .btn { font:normal 14px Tahoma; width:95px; height:32px; padding:0;  cursor:pointer; border:0; } 
+
+ .btn_h { background-position:-100px -35px; } .description { font-size:12px; color:#888; margin:0; } 
+
+ .hide { display:none; } 
+ 
+ .linkad { width:712px; margin:10px auto; } 
+
+ .sites { width:700px; margin:15px auto; padding:4px; } 
+
+ .sites dl { height:36px; line-height:36px; margin:0; display:block; } 
+
+ .sites dt, .sites dd { text-align:center; display:block; float:left; } 
+
+ .sites dt { width:60px; } .sites dd { width:90px; margin:0; } 
+
+ .footer { font-size:11px; color:#888; margin:15px auto; } 
+ 
+ .center { text-align:center; font-weight:bold; }
+
+ .center a { color:#ff3300; }.bgr {height: 100%;}
