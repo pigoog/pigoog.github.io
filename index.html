@@ -30,14 +30,17 @@
 	}
 	function baidu_search(){
 	　  var searchinput=document.getElementById("search-textbox").value;
+		searchinput=searchinput.replace('%', '%25');
 		window.open("https://www.baidu.com/baidu?word="+searchinput); 
 	}
 	function bing_search(){
 		var searchinput=document.getElementById("search-textbox").value;
+		searchinput=searchinput.replace('%', '%25');
 		window.open("https://cn.bing.com/search?q="+searchinput+"&form=QBLHCN&ensearch=1"); 
 	}
 	function google_search(){
 		var searchinput=document.getElementById("search-textbox").value;
+		searchinput=searchinput.replace('%', '%25');
 		window.open("https://www.google.com/search?q="+searchinput); 
 	}
 	function search(){
