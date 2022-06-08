@@ -63,7 +63,7 @@
 </script>
 
 <script>
-	var requestURL = 'https://api.exchangerate.host/latest?base=CNY&source=ecb';
+	var requestURL = 'https://api.exchangerate.host/latest?base=CNY&source=ecb&t='+(new Date()).valueOf();
 	var request = new XMLHttpRequest();
 	request.open('GET', requestURL);
 	request.responseType = 'json';
