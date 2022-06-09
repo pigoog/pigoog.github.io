@@ -62,6 +62,7 @@
 	}
 </script>
 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
 	var requestURL = 'https://api.exchangerate.host/latest?base=CNY&source=ecb&t='+(new Date()).valueOf();
 	var request = new XMLHttpRequest();
@@ -70,10 +71,28 @@
 	request.send();
 	request.onload = function() {
 		var response = request.response;
-		document.getElementById("marketdata").innerText=response.date+"\xa0\xa0\xa0\xa0\xa0\xa0USD/CNY："+(1/response.rates.USD).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0EUR/CNY："+(1/response.rates.EUR).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0GBP/CNY："+(1/response.rates.GBP).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0JPY/CNY："+(1/response.rates.JPY).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0Source：European Central Bank";
-	}  
+		var span1 = document.createElement('span');
+		span1.innerHTML="USD/CNY："+(1/response.rates.USD).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0EUR/CNY："+(1/response.rates.EUR).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0GBP/CNY："+(1/response.rates.GBP).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0JPY/CNY："+(1/response.rates.JPY).toFixed(4)+"\xa0\xa0\xa0\xa0\xa0\xa0Source：European Central Bank\xa0\xa0\xa0\xa0\xa0\xa0";
+		document.getElementById("marketdata").appendChild(span1)
+	}
+	
+	$.ajax({
+		url:"https://api.money.126.net/data/feed/0000001%2C1399001%2Cmoney.api",
+		type:"get",
+		dataType:"jsonp",
+		success:function(data){
+			var span2 = document.createElement('span');
+			console.log(document.getElementById("marketdata").intertext)
+			if (document.getElementById("marketdata").intertext==undefined){
+				span2.innerHTML="SH.000001："+(data["0000001"]["price"])+"\xa0\xa0\xa0\xa0\xa0\xa0SZ.399001："+(data["1399001"]["price"])+"\xa0\xa0\xa0\xa0\xa0\xa0Source：NetEase\xa0\xa0\xa0\xa0\xa0\xa0";
+			}
+			else{
+				span2.innerHTML="\xa0\xa0\xa0\xa0\xa0\xa0SH.000001："+(data["0000001"]["price"])+"\xa0\xa0\xa0\xa0\xa0\xa0SZ.399001："+(data["1399001"]["price"])+"\xa0\xa0\xa0\xa0\xa0\xa0Source：NetEase\xa0\xa0\xa0\xa0\xa0\xa0";
+			}
+			document.getElementById("marketdata").appendChild(span2)
+		}
+	}); 
 </script>
-
 <body style="background-image:url('./assets/img/bg.jpg')">
 	<preload-img>
 		<img src='./assets/img/search-1.png' hidden />
